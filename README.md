@@ -7,4 +7,4 @@
 
 ###### 推荐一个可以检查shell语法的网站,超级好用.也可以安装到自己的机器上:  [shellcheck](https://www.shellcheck.net/)
 
-![pic](https://raw.githubusercontent.com/Mr-xn/Onekey-Open-BT-panel-ssl-with-domain/shotpic_2018-08-22_12-54-16.png)
+![pic](https://raw.githubusercontent.com/Mr-xn/Onekey-Open-BT-panel-ssl-with-domain/master/shotpic_2018-08-22_12-54-16.png)
