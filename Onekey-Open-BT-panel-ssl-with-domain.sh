@@ -54,6 +54,7 @@ new_panel_adr="https://"${domain}":"${port}"/login"
 domain_ssl="/etc/letsencrypt/live/"${domain}
 lets_privkey="/etc/letsencrypt/live/"${domain}"/privkey.pem"
 lets_fullchain="/etc/letsencrypt/live/"${domain}"/fullchain.pem"
+bt_file="/etc/init.d/bt"
 
 #root权限判断
 check_root() {
@@ -174,14 +175,18 @@ check_domain_install_ssl(){
 }
 #面板启动状态检查
 panel_status(){
-    /etc/init.d/bt status | awk '{print $5}' > panel_status.log
-    if [[ `grep -ci "running" panel_status.log` -eq '2' ]]; then
-        /etc/init.d/bt status
-        echo
-        echo -e "${Info} 宝塔面板正常运行"
+    if [[ ! -e ${bt_file} ]]; then
+        echo -e "${Error} 未检测到宝塔面板服务相关文件,请先安装面板!" && exit 1
     else
-        echo -e "${Info} 面板状态异常,尝试重启面板..."
-        /etc/init.d/bt restart
+        /etc/init.d/bt status | awk '{print $5}' > panel_status.log
+        if [[ `grep -ci "running" panel_status.log` -eq '2' ]]; then
+            /etc/init.d/bt status
+            echo
+            echo -e "${Info} 宝塔面板正常运行"
+        else
+            echo -e "${Info} 面板状态异常,尝试重启面板..."
+            /etc/init.d/bt restart
+        fi
     fi
 }
 #安装检查
