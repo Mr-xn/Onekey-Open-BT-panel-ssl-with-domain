@@ -10,11 +10,12 @@
 ![pic](https://raw.githubusercontent.com/Mr-xn/Onekey-Open-BT-panel-ssl-with-domain/master/shotpic_2018-08-22_12-54-16.png)
 
 #### 使用方法：
-- 1. 直接wget到本地执行就可以根据提示操作了:  
+-  直接wget到本地执行就可以根据提示操作了:  
 ``` shell
 wget https://raw.githubusercontent.com/Mr-xn/Onekey-Open-BT-panel-ssl-with-domain/master/Onekey-Open-BT-panel-ssl-with-domain.sh && bash Onekey-Open-BT-panel-ssl-with-domain.sh
 ```
-* **ToDo **
+
+* ToDo
 - [x] 支持自定义证书
 - [ ] 不需要宝塔后台添加域名
 - [ ] 添加宝塔常用命令:重置面板密码、重置封禁IP列表、更改端口等等
